@@ -5,5 +5,5 @@ yum install mongodb-org -y
 echo -e "\e[31m changing listen address\e[0m"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 echo -e "\e[31m  Enabling and starting nginx service\e[0m"
-systemctl enable nginx
-systemctl restart nginx
+systemctl enable mongod
+systemctl restart mongod
