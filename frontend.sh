@@ -1,11 +1,11 @@
 echo -e "\e[31m Installing Nginx Service \e[0m"
-yum install nginx -y &>>/tem/roboshop.log
+yum install nginx -y &>>/temp/roboshop.log
 echo -e "\e[31m Removing default server content\e[0m"
 cd /usr/share/nginx/html
 rm -rf *
 echo -e"\e[31m Downloading custom server content \e[0m"
-curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>/tem/roboshop.log
-unzip frontend.zip &>>/tem/roboshop.log
+curl -O https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>/temp/roboshop.log
+unzip frontend.zip &>>/temp/roboshop.log
 rm -rf frontend.zip
 echo -e"\e[31m configuring reverse proxy \e[0m"
 cp /root/practice-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf
